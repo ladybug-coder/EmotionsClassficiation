@@ -1,0 +1,36 @@
+ScreenManager:
+    Home:
+        id: Home
+        name:"Home"
+
+<Home>:
+    feeling: u_feel
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'background.png'
+        
+    FloatLayout:
+        Image:
+            source: 'logo.png'
+            size_hint: 0.3,0.15
+            pos_hint: {'center_x':.5, 'center_y':.6}
+        Label:
+            text: "How are you feeling today?"
+            pos_hint: {'center_x':.5, 'center_y':.4}
+            color: 1,0,1,1
+        TextInput:
+            id:u_feel
+            size_hint: 0.5, 0.1
+            pos_hint: {'center_x':.5, 'center_y':.3}
+            multiline:False
+        Button:
+            text: "Submit"
+            size_hint: 0.2, 0.1
+            pos_hint: {'center_x':.5, 'center_y':.2}
+            font_size: 20
+
+            on_release: 
+                root.on_click()
+        
